@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moja Stranica</title>
+    <link rel="stylesheet" href="stil.css">
+  </head>
+  <body>
+    <header class="liquidGL navigacija">
+      <div class="content">
+        <button class="navgumb" onclick="prikaziStranicu('home')">Home</button>
+        <button class="navgumb" onclick="prikaziStranicu('info')">Info</button>
+        <button class="navgumb" onclick="prikaziStranicu('portfolio')">Portfolio</button>
+        <button class="navgumb" onclick="prikaziStranicu('letiqa')">Youtube</button>
+        <button class="navgumb" onclick="prikaziStranicu('3dprints')">3D Prints</button>
+      </div>
+    </header>
+
+    <div class="maska"></div>
+
+    <main>
+      <section class="stranica aktivna" id="home" style="display: block;">
+        <div class="paragraf">
+          <div class="staklo-pozadina"></div>
+          <div class="tekst-sadrzaj">
+            <h2 id="anketanaslov">Poštovani, ova stranica je u radu. check it out later. <br> lp</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="stranica" id="info" style="display: none;">
+        <div class="paragraf" id="info-div">
+          <div class="staklo-pozadina"></div>
+          <div class="tekst-sadrzaj">
+            <h1 class="naslovi">Dobrodošli na moju web stranicu!</h1>
+            <h3>Ja sam Marko Letica i idem na <em>Grafički fakultet</em> u Zagrebu i<br> ovo je moja stranica iz kolegija Multimedijske Komunikacije 1. </h3>
+            <h2>Malo više o meni:</h2>
+            <ul>
+              <li>Dolazim iz Trogira</li>
+              <li>Jako volim računala</li>
+              <li>U slobodno vrijeme se bavim<br> fotografijom i 3D printanjem</li>
+            </ul>
+            <h2>Ovo je lista mojih omiljenih videoigara:</h2>
+            <ol>
+              <li>Super Mario Galaxy (2007.)</li>
+              <li>Minecraft (2009.)</li>
+              <li>Satisfactory (2024.)</li>
+            </ol>
+            <p>Ovo je jedna pjesma koju volim, zove se Scott Pilgrim od banda Plumtree.</p>
+            <audio src="ostale_datoteke/scott_pilgrim.mp3" controls></audio>
+            <p>Pritisnite gumb da bi otvorili u vanjskom prozoru:</p>
+            <a href="ostale_datoteke/scott_pilgrim.mp3" target="_blank">
+              <button>Otvori!</button>
+            </a>
+            <img id="scott" width="250px" src="slike/scottpilgrim.webp" alt="Scott Pilgrim">
+            <p>Pritisnite gumb da bi otvorili u vanjskom prozoru:</p>
+            <a href="slike/scottpilgrim.webp" target="_blank">
+              <button>Otvori!</button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stranica" id="portfolio" style="display: none;">
+        <div class="paragraf" id="portfolio-div">
+          <h2 class="anketanaslov">Moj portfolio</h2>
+        </div>
+      </section>
+
+      <section class="stranica" id="letiqa" style="display: none;">
+        <div class="paragraf" id="letiqa-div">
+          <h1>Moj Youtube Kanal</h1>
+          <p>U slobodno vrijeme uploadam videe koje radim na YouTube i svoj Instagram. Volim video editanje i tim se bavim u slobodno vrijeme.</p>
+        </div>
+
+        <!-- Youtube-only panel: appears only when `#letiqa` is shown -->
+        <div class="dynamic-panel">
+          <aside id="pages-sidebar" class="pages-box">
+            <h3>Pages</h3>
+            <ul>
+              <li><a href="#" class="page-link" data-page="home">Home</a></li>
+              <li><a href="#" class="page-link" data-page="blog">Blog</a></li>
+              <li><a href="#" class="page-link" data-page="about">About</a></li>
+              <li><a href="#" class="page-link" data-page="faq">FAQ</a></li>
+            </ul>
+          </aside>
+
+          <section id="dynamic-content" class="latest-video-box">
+            <h2 class="lv-title">LATEST VIDEO</h2>
+            <div class="lv-media">
+              <div class="lv-video">
+                <p class="above-text" id="lv-paragraph">This is a short text above the video. Put an intro or timestamp here.</p>
+                <iframe id="lv-iframe" src="https://www.youtube.com/embed/Vb_7Mdmzt-E" title="Latest video" frameborder="0" allowfullscreen></iframe>
+                <p class="below-text">This is a short text below the video. Add links, notes or timestamps here.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="stranica" id="3dprints" style="display: none;">
+        <div class="paragraf" id="prints-div">
+          <h2 class="anketanaslov">Moje 3D Printanje</h2>
+          <p>Ovdje idu moji 3D printovi...</p>
+        </div>
+      </section>
+    </main>
+    <!-- html2canvas – DOM snapshotter (required). Load immediately so liquidGL can use it. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- liquidGL.js – the library itself -->
+    <script src="scripts/liquidGL.js"></script>
+    <script src="java.js"></script>
+  </body>
+</html>
